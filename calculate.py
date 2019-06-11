@@ -37,8 +37,10 @@ else:
 import argparse
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group()
-group.add_argument("-a","--add", help="adds two given numbers together. type -add")
-group.add_argument("-m","--multiply", help="multiplies two given numbers together.type -multiply")
+group.add_argument("-a","--add", 
+                   help="adds two given numbers together. type -add")
+group.add_argument("-m","--multiply", 
+                   help="multiplies two given numbers together. type -multiply")
 parser.add_argument("x", type=int, help="first integer")
 parser.add_argument("y", type=int, help="second integer")
 parser.add_argument("-v", "--verbosity", action="count", default=0,
@@ -65,7 +67,7 @@ else:
     print(summation)
 
 """
-#untouched verbo
+#untouched verbosity
 if args.verbosity >= 2:
     print("{} plus {} equals {}".format(args.x, args.y, summation))
 elif args.verbosity >= 1:
