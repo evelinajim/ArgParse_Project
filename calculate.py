@@ -15,33 +15,30 @@ parser.add_argument("square", help="display a square of a given number",
                     type=int)
 args = parser.parse_args()
 print(args.square**2)
+
 """
 """
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--square", type=int,
+parser.add_argument("square", type=int,
                     help="display a square of a given number")
 parser.add_argument("-v", "--verbosity", type=int, choices=[0, 1, 2],
                     help="increase output verbosity")
 args = parser.parse_args()
-
-if args.square:
-    answer = args.square**2
-
+answer = args.square**2
 if args.verbosity == 2:
     print("the square of {} equals {}".format(args.square, answer))
 elif args.verbosity == 1:
     print("{}^2 == {}".format(args.square, answer))
 else:
-    print("hey")
-
+    print(answer)
 """
-##FINISHED WORK
+
 import argparse
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group()
-group.add_argument('-a',"--add",type=str, help="adds two given numbers together. type -add", default="--add")
-group.add_argument('-m','--multiply',type=str, help="multiplies two given numbers together. type -multiply")
+group.add_argument("-a","--add", help="adds two given numbers together. type -add")
+group.add_argument("-m","--multiply", help="multiplies two given numbers together.type -multiply")
 parser.add_argument("x", type=int, help="first integer")
 parser.add_argument("y", type=int, help="second integer")
 parser.add_argument("-v", "--verbosity", action="count", default=0,
@@ -67,11 +64,8 @@ elif args.multiply:
 else:
     print(summation)
 
-
-
-
 """
-#untouched verbosity
+#untouched verbo
 if args.verbosity >= 2:
     print("{} plus {} equals {}".format(args.x, args.y, summation))
 elif args.verbosity >= 1:
